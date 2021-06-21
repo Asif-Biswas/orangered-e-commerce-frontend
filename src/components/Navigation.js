@@ -72,7 +72,7 @@ class Navigation extends Component {
 
     loginHandler=()=>{
         this.setState({loading:true})
-        fetch('https://orangered-backend.herokuapp.comkend.herokuapp.com/api/rest-auth/login/', {
+        fetch('https://orangered-backend2.herokuapp.com/api/rest-auth/login/', {
             method: 'POST',
             //credentials: 'include',
             headers:{
@@ -107,7 +107,7 @@ class Navigation extends Component {
 
     signupHandler=()=>{
         this.setState({loading:true})
-        fetch('https://orangered-backend.herokuapp.comkend.herokuapp.com/api/rest-auth/registration/', {
+        fetch('https://orangered-backend2.herokuapp.com/api/rest-auth/registration/', {
             method: 'POST',
             //credentials: 'include',
             headers:{
@@ -145,7 +145,7 @@ class Navigation extends Component {
 
     logoutHandler=()=>{
         let store = JSON.parse(localStorage.getItem('login'))
-        fetch('https://orangered-backend.herokuapp.comkend.herokuapp.com/api/rest-auth/logout/', {
+        fetch('https://orangered-backend2.herokuapp.com/api/rest-auth/logout/', {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json',

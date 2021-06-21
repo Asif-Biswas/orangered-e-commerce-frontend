@@ -16,7 +16,7 @@ class MyCart extends Component {
 
     componentDidMount(){
         let store = JSON.parse(localStorage.getItem('login'))
-        var url = 'https://orangered-backend.herokuapp.com/myCartDetails/'
+        var url = 'https://orangered-backend2.herokuapp.com/myCartDetails/'
         fetch(url,{
             method:'GET',
             headers: {

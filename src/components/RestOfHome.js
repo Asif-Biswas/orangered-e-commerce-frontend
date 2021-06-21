@@ -16,7 +16,7 @@ class RestOfHome extends Component {
         var categoryList = JSON.stringify(this.props.categoryList)
         var companyList = JSON.stringify(this.props.companyList)
 
-        var url = 'https://orangered-backend.herokuapp.com/getProduct/'
+        var url = 'https://orangered-backend2.herokuapp.com/getProduct/'
         fetch(url, {
             method: 'POST',
             headers:{

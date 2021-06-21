@@ -18,7 +18,7 @@ class SearchProductContainer extends Component {
         if(x===0){
             str = 'apple'
         }
-        var url = 'https://orangered-backend.herokuapp.com/search/'+str+'/'
+        var url = 'https://orangered-backend2.herokuapp.com/search/'+str+'/'
         fetch(url, {
             method: 'GET',
             //credentials: 'include',

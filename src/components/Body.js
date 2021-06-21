@@ -21,6 +21,7 @@ class Body extends Component {
     handleScroll=(event)=>{
         const bottom = event.target.scrollHeight - event.target.scrollTop === event.target.clientHeight;
         
+        
         if(bottom){
             var currentHeight = event.target.scrollHeight
             this.setState({height: currentHeight})
@@ -59,6 +60,7 @@ class Body extends Component {
                 <Route path='/search'>
                     <SearchProductContainer/>
                 </Route>
+                <Route component={Home}/>
                 </Switch>
             </div>
         );

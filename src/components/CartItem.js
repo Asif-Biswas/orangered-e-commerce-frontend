@@ -21,7 +21,7 @@ class CartItem extends Component {
 
     increaseQuantity=()=>{
         let store = JSON.parse(localStorage.getItem('login'))
-        var url3 = 'https://orangered-backend.herokuapp.com/increaseQuantity/'+this.props.id+'/'
+        var url3 = 'https://orangered-backend2.herokuapp.com/increaseQuantity/'+this.props.id+'/'
         fetch(url3, {
             method: 'GET',
             //credentials: 'include',
@@ -51,7 +51,7 @@ class CartItem extends Component {
 
     decreaseQuantity=()=>{
         let store = JSON.parse(localStorage.getItem('login'))
-        var url3 = 'https://orangered-backend.herokuapp.com/decreaseQuantity/'+this.props.id+'/'
+        var url3 = 'https://orangered-backend2.herokuapp.com/decreaseQuantity/'+this.props.id+'/'
         fetch(url3, {
             method: 'GET',
             //credentials: 'include',
@@ -88,7 +88,7 @@ class CartItem extends Component {
         var id = this.props.id
         let store = JSON.parse(localStorage.getItem('login'))
         if(this.state.delete){
-            var url3 = 'https://orangered-backend.herokuapp.com/undoDeletedCartItem/'+id+'/'
+            var url3 = 'https://orangered-backend2.herokuapp.com/undoDeletedCartItem/'+id+'/'
             fetch(url3, {
                 method: 'GET',
                 //credentials: 'include',
@@ -104,7 +104,7 @@ class CartItem extends Component {
                 payload: {'priceNow': priceNow, 'value': 'increase', 'saving': saving}
             })
         }else{
-            var url4 = 'https://orangered-backend.herokuapp.com/deleteCartItem/'+id+'/'
+            var url4 = 'https://orangered-backend2.herokuapp.com/deleteCartItem/'+id+'/'
             fetch(url4, {
                 method: 'GET',
                 //credentials: 'include',

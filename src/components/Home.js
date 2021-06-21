@@ -22,7 +22,8 @@ class Home extends Component {
         if(this.props.reloadPage){
             window.location.reload()
         }
-        var url = 'https://orangered-backend.herokuapp.com/forYou/'
+        //alert(99)
+        var url = 'https://orangered-backend2.herokuapp.com/forYou/'
         fetch(url, {
             method: 'GET',
             //credentials: 'include',
@@ -38,7 +39,7 @@ class Home extends Component {
             }
         }))
 
-        var url2 = 'https://orangered-backend.herokuapp.com/getCategoryName/'
+        var url2 = 'https://orangered-backend2.herokuapp.com/getCategoryName/'
         fetch(url2, {
             method: 'GET',
             //credentials: 'include',
@@ -56,7 +57,7 @@ class Home extends Component {
 
         try {
             let store = JSON.parse(localStorage.getItem('login'))
-            var url3 = 'https://orangered-backend.herokuapp.com/totalItemInCart/'
+            var url3 = 'https://orangered-backend2.herokuapp.com/totalItemInCart/'
             fetch(url3, {
                 method: 'GET',
                 //credentials: 'include',
@@ -77,13 +78,28 @@ class Home extends Component {
         setTimeout(()=>{
             this.getProduct()
         },3000)
+        setTimeout(()=>{
+            this.props.dispatch({
+                type: 'canLoadMore',
+            })
+        },15000)
+        setTimeout(()=>{
+            this.props.dispatch({
+                type: 'canLoadMore',
+            })
+        },35000)
+        setTimeout(()=>{
+            this.props.dispatch({
+                type: 'canLoadMore',
+            })
+        },55000)
     }
 
     getProduct=()=>{
         var companyList = JSON.stringify(this.props.companyList)
         var categoryList = JSON.stringify(this.props.categoryList)
 
-        var url = 'https://orangered-backend.herokuapp.com/getProduct/'
+        var url = 'https://orangered-backend2.herokuapp.com/getProduct/'
         fetch(url, {
             method: 'POST',
             //credentials: 'include',
@@ -100,10 +116,15 @@ class Home extends Component {
 
             //var test = result[0]['data']
             //console.log(test);
-            var companyId = result[1]['data'][0]['company']['id']
-            var categoryId = result[0]['data'][0]['category'][0]['id']
-            var companyList = [...this.props.companyList, ...[companyId]]
-            var categoryList = [...this.props.categoryList, ...[categoryId]]
+            try {
+                var companyId = result[1]['data'][0]['company']['id']
+                var categoryId = result[0]['data'][0]['category'][0]['id']
+                var companyList = [...this.props.companyList, ...[companyId]]
+                var categoryList = [...this.props.categoryList, ...[categoryId]]
+            } catch {
+                window.location.href = '/'
+            }
+            
             this.setState({product: product})
             
             this.props.dispatch({
@@ -170,6 +191,7 @@ class Home extends Component {
         else{
             return(
                 <div className='container'>
+                    <SkeletonProductContainer/>
                     <SkeletonProductContainer/>
                     <RestOfHome/>
                 </div>

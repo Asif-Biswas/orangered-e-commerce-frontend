@@ -16,7 +16,7 @@ class ItemDetails extends Component {
         var id = this.props.productId
         try {
             let store = JSON.parse(localStorage.getItem('login'))
-            var url = 'https://orangered-backend.herokuapp.com/addToCart/'+id+'/'
+            var url = 'https://orangered-backend2.herokuapp.com/addToCart/'+id+'/'
             fetch(url,{
                 method:'GET',
                 headers: {
@@ -49,7 +49,7 @@ class ItemDetails extends Component {
     deleteCartItem=()=>{
         var id = this.props.productId
         let store = JSON.parse(localStorage.getItem('login'))
-        var url = 'https://orangered-backend.herokuapp.com/deleteCartItem/'+id+'/'
+        var url = 'https://orangered-backend2.herokuapp.com/deleteCartItem/'+id+'/'
         fetch(url,{
             method:'GET',
             headers: {
@@ -74,7 +74,7 @@ class ItemDetails extends Component {
     componentDidMount(){
         //let store = JSON.parse(localStorage.getItem('login'))
         var id = this.props.productId
-        var url4 = 'https://orangered-backend.herokuapp.com/productDetails/'+id+'/'
+        var url4 = 'https://orangered-backend2.herokuapp.com/productDetails/'+id+'/'
             fetch(url4, {
                 method: 'GET',
                 //credentials: 'include',

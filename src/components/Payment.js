@@ -6,7 +6,7 @@ class Payment extends Component {
 
     paymentDone=()=>{
         let store = JSON.parse(localStorage.getItem('login'))
-        var url3 = 'https://orangered-backend.herokuapp.com/purchase/'
+        var url3 = 'https://orangered-backend2.herokuapp.com/purchase/'
         fetch(url3, {
             method: 'GET',
             //credentials: 'include',

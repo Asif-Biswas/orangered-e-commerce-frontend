@@ -14,7 +14,7 @@ class Information extends Component {
 
     componentDidMount(){
         let store = JSON.parse(localStorage.getItem('login'))
-        var url3 = 'https://orangered-backend.herokuapp.com/myDetails/'
+        var url3 = 'https://orangered-backend2.herokuapp.com/myDetails/'
         fetch(url3, {
             method: 'GET',
             //credentials: 'include',

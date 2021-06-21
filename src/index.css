@@ -14,7 +14,7 @@ code {
 .background-color{background-color: rgb(230, 230, 230);}
 
 @media (max-width: 600px) {.signup-container{width: 100vw; height: 80vh;}.category-item{width: 180px;}
-  .product-item{width: 165px; height: 215px;}.pi-img-container>img{max-height: 130px;}.product-container{height: 285px;}
+  .product-item{width: 165px; height: 215px;}.pi-img-container>img{max-height: 130px; max-width: 100%;}.product-container{height: 285px;}
   .add-to-cart{padding: 8px;}
   .skpi-img-container{height: 130px; width: 100%; background-color: grey;}
   }

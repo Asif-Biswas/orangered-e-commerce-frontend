@@ -12,7 +12,7 @@ class YouMayLike extends Component {
 
     componentDidMount(){
         let store = JSON.parse(localStorage.getItem('login'))
-        var url2 = 'https://orangered-backend.herokuapp.com/youMayLikeOnCart/'
+        var url2 = 'https://orangered-backend2.herokuapp.com/youMayLikeOnCart/'
         fetch(url2,{
             method:'GET',
             headers: {

@@ -14,7 +14,7 @@ class OrderSummary extends Component {
     componentDidMount(){
         setTimeout(()=>{
             let store = JSON.parse(localStorage.getItem('login'))
-            var url2 = 'https://orangered-backend.herokuapp.com/myAllCartItems/'
+            var url2 = 'https://orangered-backend2.herokuapp.com/myAllCartItems/'
             fetch(url2,{
                 method:'GET',
                 headers: {
